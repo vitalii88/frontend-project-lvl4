@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Teaching project on React \"Chat\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitalii88/frontend-project-lvl4.git"
+  },
+  "keywords": [
+    "React",
+    "JavaScript"
+  ],
+  "author": "Vitalii Bairak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitalii88/frontend-project-lvl4/issues"
+  },
+  "homepage": "https://github.com/vitalii88/frontend-project-lvl4#readme",
+  "dependencies": {
+    "@hexlet/chat-server": "^1.1.3"
+  }
+}
