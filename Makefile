@@ -12,3 +12,4 @@ deploy:
 
 install:
 	npm install
+	make -C frontend install
