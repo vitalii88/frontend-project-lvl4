@@ -3,11 +3,17 @@ import {useFormik} from 'formik';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import loginImage from '../assets/image/login.png'
 import {loginVolidateSchema} from '../schemas';
+import axios from 'axios';
+import routes from '../routes';
 
 
-const onSubmit = () => {
-  console.log('Login form submited');
-}
+// const onSubmit = async () => {
+//   const params = { username: 'admin', password: 'admin' };
+//   console.log('Login form submited');
+//   console.log(routes.loginPath());
+//   const resp = await axios.post(routes.loginPath(), params);
+//   console.log('!!!!!! resp:   ',resp);
+// };
 const Login = () => {
   const formik = useFormik({
     initialValues: {
@@ -15,12 +21,17 @@ const Login = () => {
       password: '',
     },
     validationSchema: loginVolidateSchema,
-    onSubmit,
+    onSubmit: async () => {
+      try {
+        const params = { username: 'admin', password: 'admin' };
+        const resp = await axios.post(routes.loginPath(), params);
+        console.log('!!!!!! resp:   ',resp);
+      } catch (err) {
+
+      }
+    },
   });
 
-  console.log('formik.errors: ', formik.errors);
-
-  console.log(formik)
   return (
     <>
       <Header />
